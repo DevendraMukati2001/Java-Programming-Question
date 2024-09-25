@@ -1,0 +1,24 @@
+///main difference b/w static (without creating object )and object create
+
+//without create object ke liye static keyword lga  de function nam ke phle
+public class function{
+    public static void main(String[] args){
+        function f=new function();
+        f.greeting();
+        greeting1();
+    }
+    
+    //without static to hme object bnana pdega
+    public void greeting(){
+        System.out.println("Good morning");
+    }
+    
+    
+    
+    //without create object ke liye static keyword lga  de function nam ke phle
+    public static void greeting1(){
+        System.out.print("Good afternoon");
+    }
+    
+    
+}
