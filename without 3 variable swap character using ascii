@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch = 'a';
+    char ch1 = 'b';
+
+   
+    ch = ch + ch1; 
+    ch1 = ch - ch1; 
+    ch = ch - ch1;  
+
+    cout << "After swapping characters will be " << ch << " and " << ch1 << endl;
+
+    return 0;
+}
