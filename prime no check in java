@@ -1,0 +1,24 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        boolean isprime=isprime(n);
+        if(isprime)
+        System.out.print("prime no h");
+        else
+        System.out.print("prime no nhi h");
+    }
+    public static boolean isprime(int num){
+        int i=2;
+        while(i<num)
+        {
+            if(num%i==0)
+            return false;
+            i++;
+        }
+        return true;
+        
+    }
+    
+}
