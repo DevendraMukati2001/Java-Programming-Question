@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Enum to identify data type
+enum NodeType {
+    INT,
+    CHAR
+};
+
+// Structure for the node
+struct Node {
+    enum NodeType type; // To store type of data
+    union {
+        int intData; // For integer data
+        char charData; // For character data
+    } data; // Union to hold either int or char
+    struct Node* next; // Pointer to the next node
+};
+
+// Function to create a new integer node
+struct Node* createIntNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->type = INT;
+    newNode->data.intData = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to create a new character node
+struct Node* createCharNode(char data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->type = CHAR;
+    newNode->data.charData = data;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to print the linked list
+void printList(struct Node* head) {
+    while (head != NULL) {
+        if (head->type == INT) {
+            printf("%d -> ", head->data.intData);
+        } else if (head->type == CHAR) {
+            printf("%c -> ", head->data.charData);
+        }
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+
+int main() {
+    // Creating a linked list with mixed data types
+    struct Node* head = createIntNode(10);
+    head->next = createCharNode('A');
+    head->next->next = createIntNode(20);
+    head->next->next->next = createCharNode('B');
+    head->next->next->next->next = createIntNode(30);
+
+    // Printing the linked list
+    printf("Linked List: ");
+    printList(head);
+
+    // Free allocated memory (optional but recommended)
+    // ...
+
+    return 0;
+}
