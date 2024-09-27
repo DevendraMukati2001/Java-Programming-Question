@@ -24,3 +24,38 @@ public static void main(String args[])
     System.out.print("anraay is not pallindrome");
 }
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+from dusre se
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt(); // Read the size of the array
+        int arr[] = new int[n];
+        
+        // Read array elements
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        // Check for palindrome
+        boolean isPalindrome = true;
+        for (int i = 0; i < n / 2; i++) {
+            if (arr[i] != arr[n - i - 1]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        
+        // Output result
+        if (isPalindrome) {
+            System.out.println("array is palindrome");
+        } else {
+            System.out.println("array is not palindrome");
+        }
+    }
+}
+
