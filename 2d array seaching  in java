@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class Main{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int j;
+        int arr[][]=new int[n][n];
+        int flag=0;
+        for(int i=0;i<n;i++)
+        {
+            for( j=0;j<n;j++){
+            arr[i][j]=sc.nextInt();
+            }
+        }
+        int key=sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            for(j=0;j<n;j++){
+            System.out.print(arr[i][j]+" ");
+            }
+            System.out.print("\n");
+            if(arr[i][j]==key)
+            break;
+            flag=1;
+        }
+        if(flag==0)
+        System.out.print("element found ");
+        else
+        System.out.print("element not found");
+        
+    }
+}
