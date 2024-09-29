@@ -1,0 +1,53 @@
+ class Main{
+     static int totalnoofbooks;
+     String travel;
+     String author;
+     String isbn;
+     boolean isborrowed;
+     static{
+         totalnoofbooks=0;
+     }
+     {
+         totalnoofbooks++;
+     }
+     Main(String travel,String author,String isbn)
+     {
+         this.travel=travel;
+         this.author=author;
+         this.isbn=isbn;
+     }
+     Main(String isbn){
+        this(isbn,"unknown","unknown");         
+     }
+
+ static int gettotalnobook(){
+     return totalnoofbooks;
+ }
+
+
+void borrowbook(){
+    if(isborrowed){
+        System.out.println("book is already borroweed");
+    }else{
+        this.isborrowed=true;
+        System.out.println("enjoy the book");
+    }
+}
+    void returnbook(){
+        if(isborrowed){
+            this.isborrowed=false;
+            System.out.println("hope yoyu enjioyed the booj");
+        }else{
+            System.out.println("thois book already in the librwry");
+        }
+    }
+public static void main(String args[]){
+Main designofthing=new Main("ramrahim","degisn","1");
+System.out.print(Main.gettotalnobook());
+Main mybook=new Main("2");
+designofthing.borrowbook();
+mybook.borrowbook();
+designofthing.borrowbook();
+designofthing.returnbook();
+}
+}
