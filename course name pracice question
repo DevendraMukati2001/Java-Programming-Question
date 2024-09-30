@@ -1,0 +1,23 @@
+class course{
+    static int maxcapacity=100;
+    String coursename;
+    int enrollment;
+    course(String coursename){
+        this.coursename=coursename;
+        this.enrollment=0;
+        this.enrolledstudent=new String[maxcapacity];
+    }
+    String[] enrolledstudent=new String[maxcapacity];
+    static void setmaxcapacity(int maxcapacity){
+        course.maxcapacity=maxcapacity;
+    }
+    void enrollstudent(String studentName){
+        enrollstudent[enrollstudent]=studentName;
+        enrollment++;
+    }
+    void unenrollstudent(){
+        System.out.print("student removed");
+        enrollment--;
+    }
+    
+}
