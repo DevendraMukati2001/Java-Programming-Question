@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String str=sc.next();
+        System.out.print("your String is "+((ispallindrome(str)?"pallindrome ":"not pallindrome ")));
+    }
+    public static boolean ispallindrome(String str){
+        if(str.length()<=1){
+        return true;
+        }
+        int lastpos=str.length()-1;
+        if(str.charAt(0)!=str.charAt(lastpos))
+        {
+            return false;
+        }
+        String newstr=str.substring(1,lastpos);
+        return ispallindrome(newstr);
+        
+    }
+}
