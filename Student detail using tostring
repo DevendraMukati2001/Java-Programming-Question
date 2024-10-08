@@ -1,0 +1,21 @@
+class Student{
+    int age;
+    String name;
+    String rollnumber;
+    String house;
+    Student(int age,String name,String rollnumber,String house)
+    {
+        this.age=age;
+        this.name=name;
+        this.rollnumber=rollnumber;
+        this.house=house;
+    }
+    @Override
+    public String toString(){
+        return "Student name is "+name+" age is "+age+"rollnumber is "+rollnumber+"house is "+house;
+    }
+    public static void main(String args[]){
+         Student s=new Student(22,"dfg","45","agrawqal colony pithamput");
+         System.out.print(s.toString());
+    }
+}
