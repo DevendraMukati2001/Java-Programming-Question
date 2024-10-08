@@ -1,0 +1,10 @@
+public class Main
+{
+	public static void main(String[] args) {
+	   String name ="Sandeeep";
+	   int marks=45;
+	   System.out.print("hello "+name+", your marks is :"+marks);
+	   System.out.printf("hello %s,your marks are:%d\n",name,marks); //lowercase0
+	   System.out.printf("hello %10S,your marks are:%d",name,marks);  //uppercase
+	}
+}
