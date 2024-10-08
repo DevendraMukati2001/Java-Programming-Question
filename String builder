@@ -1,0 +1,12 @@
+class Stringtest{
+    public static void main(String args[])
+    {
+        StringBuilder sb=new StringBuilder("first");
+        sb.append("45");
+        sb.append("4523");
+        sb.append("4554");
+        sb.append("45,65");
+        sb.toString();
+        System.out.print(sb);
+    }
+}
