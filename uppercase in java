@@ -1,0 +1,8 @@
+class concate{
+    public static void main(String args[]){
+        String name="vbnm";
+        String surname="verma";
+        String fullname=name+" "+surname;
+        System.out.printf("your name is in uppercase %S",fullname);
+    }
+}
