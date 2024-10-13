@@ -1,0 +1,44 @@
+import java.util.Scanner;
+abstract class Machine {
+    abstract void functionality();
+    
+    void fan() {
+        System.out.print("Fan is running\n");
+    }
+    
+    void fanOff() {
+        System.out.print("Fan is off\n");
+    }
+}
+
+class ABC extends Machine {
+    @Override
+    void functionality() {
+        System.out.println("Fan ON ke liye 1 aur OFF ke liye 2 dbay:");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Machine m = new ABC();
+        
+        
+        m.functionality();
+       
+       
+        Scanner sc=new Scanner(System.in);
+         int fanStatus=sc.nextInt();
+        
+        switch (fanStatus) {
+            case 1:
+                m.fan();
+                break;
+            case 2:
+                m.fanOff();
+                break;
+            default:
+                System.out.print("Invalid fan status\n");
+                break;
+        }
+    }   
+}
