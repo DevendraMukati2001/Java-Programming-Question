@@ -1,0 +1,20 @@
+abstract class Animal{
+    abstract void pet();
+    void eat(){
+        System.out.print("buk lgi");
+    }
+}
+class dog extends Animal{
+    @Override
+    void pet()
+    {
+        System.out.print("bow bow ");
+    }
+}
+public class Main{
+    public static void main (String[] args) {
+        Animal m=new dog();
+        m.pet();
+        m.eat();
+    }
+}
