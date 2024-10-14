@@ -18,3 +18,23 @@ public class Main{
         m.eat();
     }
 }
+--------------------------------------------------------------------
+abstract class shape{
+    abstract void calculatearea(int r);
+    void circle(int r){
+        System.out.print("area of circle is: "+Math.PI*Math.pow(r,2));
+    }
+}
+class square extends shape{
+    @Override
+    void calculatearea(int r){
+        System.out.println("area of Square is: "+r*r);
+    }
+}
+public class Main{
+    public static void main (String[] args) {
+        shape s=new square();
+        s.calculatearea(5);
+        s.circle(2);
+    }
+}
