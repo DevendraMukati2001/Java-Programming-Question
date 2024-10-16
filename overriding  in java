@@ -1,0 +1,38 @@
+class Animal{
+    void sound()
+    {
+        System.out.println("animal makes sound");
+    }
+}
+class dog extends Animal{
+    @Override
+    void sound()
+    {
+    System.out.print("bow bow");
+    }
+}
+class cat extends Animal{
+    @Override
+    void sound()
+    {
+        System.out.println("mew mew");
+    }
+}
+class duck extends Animal{
+    @Override
+    void sound()
+    {
+        System.out.print("quack quack");
+    }
+}
+public class Main{
+    public static void main(String args[])
+    {
+        Animal m=new dog();
+        Animal c=new cat();
+        Animal d=new duck();
+        c.sound();
+        m.sound();
+        d.sound();
+    }
+}
