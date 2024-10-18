@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+void sum(int,int);
+void sum(int,int,int);
+int main()
+{
+    int a,b,c;
+    cin>>a>>b>>c;
+    sum(a,b);
+    sum(a,b,c);
+}
+void sum(int a,int b){
+cout<<"a+b="<<a+b;
+}
+void sum(int a,int b,int c)
+{
+cout<<"a+b+c="<<a+b+c;
+}
