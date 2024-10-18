@@ -16,3 +16,33 @@ void sum(int a,int b,int c)
 {
 cout<<"a+b+c="<<a+b+c;
 }
+---------------------------------------------------------------------------------------------
+#include<iostream>
+#define pi 3.14
+using namespace std;
+class overload{
+    public:void area(int);
+    void area(int ,int);
+    void area(double,double);
+    
+};
+void overload::area(int r)
+{
+    cout<<"area of circle is"<<pi*r*r<<"\n";
+    cout<<"area of square is"<<r*r;
+}
+void overload::area(int l,int b)
+{
+    cout<<"\narea of rectangle is"<<l*b;
+}
+void overload::area(double a,double b)
+{
+    cout<<"\narea of right angle triangle is"<<(1.0/2.0)*a*b;
+}
+int main()
+{
+    overload d;
+    d.area(2);
+    d.area(2,5);
+    d.area(2.0,3.0);
+}
