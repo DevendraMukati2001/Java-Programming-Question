@@ -1,0 +1,12 @@
+import java.util.*;
+class Main{
+    public static void main (String[] args) {
+        List<String> list =Arrays.asList("bear","lion","ant");
+        System.out.println(list);
+        sortindescending(list);
+        System.out.println(list);
+    }
+    public static void sortindescending(List<String> strlist){
+        Collections.sort(strlist);
+    }
+}
