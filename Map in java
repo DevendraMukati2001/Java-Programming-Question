@@ -1,0 +1,22 @@
+import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+class Main{
+    public static void main (String[] args) {
+        Map<String ,Integer> map=new HashMap<>();
+        map.put("prashant",34);
+        map.put("shyam",98);
+        map.put("mohan",75);
+        map.put("ram",65);
+        System.out.print("size of map is : "+map.size());
+        System.out.println(map.containsKey("ram"));
+        System.out.println(map.containsKey("geekos"));
+        System.out.println(map.containsKey("geeta"));
+        System.out.println(map.remove("sohan"));
+        System.out.println("size of map is : "+map.size());
+        
+        for(String key:map.keySet()){
+            System.out.printf("%s : %s\n", key,map.get(key));
+        }
+    }
+}
