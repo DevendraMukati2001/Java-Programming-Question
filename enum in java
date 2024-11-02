@@ -4,7 +4,7 @@
 }
 public class Main{
     public static void main (String[] args) {
-        System.out.println("print all the days of the weeks");
+        System.out.println("print all the days of the months");
         for(calendra ch:calendra.values())
         {
           System.out.println(ch);
