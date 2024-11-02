@@ -1,0 +1,17 @@
+import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
+class Main{
+    public static void main (String[] args) {
+        Set<Character> unique=new HashSet<>();
+        Scanner input =new Scanner(System.in);
+        System.out.print("please enter the string");
+        String userstr =input.next();
+        for(char ch:userstr.toCharArray()){
+            unique.add(ch);
+        }
+        System.out.printf("your string has %d unique Character",unique.size());
+        
+    }
+    
+}
