@@ -1,0 +1,13 @@
+
+ enum calendra{
+    jan,feb,mar,ap,may,jun,july,aug,sep,oct,nov,dec;
+}
+public class Main{
+    public static void main (String[] args) {
+        System.out.println("print all the days of the weeks");
+        for(calendra ch:calendra.values())
+        {
+          System.out.println(ch);
+        }
+    }
+}
