@@ -1,0 +1,40 @@
+class firsttask extends Thread{
+    @Override
+    public void run(){
+        for(int i=1;i<=1000;i++){
+            System.out.printf("%d*",i);
+        }
+        System.out.println("\n *complete task");
+    }
+}
+class secondtask extends Thread{
+    @Override
+    public void run(){
+        for(int i=1;i<=1000;i++){
+            System.out.printf("%d$",i);
+        }
+        System.out.println("\n $complete task");
+    }
+}
+class thirdtask extends Thread{
+    @Override
+    public void run(){
+        for(int i=1;i<=1000;i++){
+            System.out.printf("%d&",i);
+        }
+        System.out.println("\n &complete task");
+    }
+}
+public class Main{
+    public static void main (String[] args) {
+        long starttime=System.currentTimeMillis();
+        firsttask t1=new firsttask();
+        secondtask t2=new secondtask();
+        thirdtask t3=new thirdtask();
+        t1.start();
+        t2.start();
+        t3.start();
+        long endstart=System.currentTimeMillis();
+        System.out.printf("total time taken: %d", (endstart-starttime));
+    }
+}
