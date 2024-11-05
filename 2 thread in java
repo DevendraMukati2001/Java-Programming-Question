@@ -1,0 +1,25 @@
+class Main{
+    public static void main (String[] args) {
+        hellothread t1=new hellothread(1);
+        hellothread t2=new hellothread(2);
+        t1.start();
+       
+        // t2.start();
+        t2.run();
+        
+        
+    }
+}
+class hellothread extends Thread{
+    private final int threadNumber;
+    public hellothread(int threadNumber){
+        this.threadNumber=threadNumber;
+    }
+    @Override
+    public void run(){
+        for(int i=0;i<11;i++)
+        {
+            System.out.printf(" %d %s hello thread %d\n" ,i+1,Thread.currentThread().getName(),threadNumber);
+        }
+    }
+}
