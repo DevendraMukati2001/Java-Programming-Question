@@ -1,0 +1,46 @@
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class Fetchname implements Callable<String> {
+    private final String name;
+
+    public Fetchname(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String call() throws Exception {
+        Thread.sleep(4000); // Simulate a delay
+        return name + " bhartiyaa";
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        ExecutorService service = Executors.newFixedThreadPool(3); // Corrected method name
+
+        // Create Callable tasks
+        Fetchname task1 = new Fetchname("prashant");
+        Fetchname task2 = new Fetchname("sanchit");
+        Fetchname task3 = new Fetchname("kg coding");
+        Fetchname task4 = new Fetchname("dfghjkl");
+
+        // Submit tasks to the executor
+        Future<String> name1 = service.submit(task1);
+        Future<String> name2 = service.submit(task2);
+        Future<String> name3 = service.submit(task3);
+        Future<String> name4 = service.submit(task4);
+
+        // Print the results of the tasks
+        System.out.printf("Result: %s\n", name1.get());
+        System.out.printf("Result: %s\n", name2.get());
+        System.out.printf("Result: %s\n", name3.get());
+        System.out.printf("Result: %s\n", name4.get());
+
+        // Shutdown the executor service
+        service.shutdown();
+    }
+}
