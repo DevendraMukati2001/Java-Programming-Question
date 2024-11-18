@@ -1,0 +1,37 @@
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static class Employee {
+        private final String name;
+        private final int salary;
+
+        public Employee(String name, int salary) {
+            this.name = name;
+            this.salary = salary;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getSalary() {
+            return salary;
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Employee> employees = List.of(
+            new Employee("Pr", 1000),
+            new Employee("John", 1200)
+        );
+
+        // Sorting employees by salary
+        List<Employee> sortedEmployees = employees.stream()
+            .sorted((e1, e2) -> Integer.compare(e1.getSalary(), e2.getSalary()))
+            .collect(Collectors.toList());
+
+        // Print sorted employees
+        sortedEmployees.forEach(e -> System.out.println(e.getName() + " - " + e.getSalary()));
+    }
+}
