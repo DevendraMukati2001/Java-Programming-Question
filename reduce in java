@@ -1,0 +1,30 @@
+import java.util.List;
+import java.util.function.BinaryOperator;
+
+class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        int sum = 0;
+        
+        System.out.print(numbers.size());
+        System.out.println("\nPrinting numbers and calculating cumulative sum normally");
+        for (Integer number : numbers) {
+            sum += number;
+            System.out.println("Cumulative sum: " + sum);
+        }
+
+        System.out.println("Total sum using for loop: " + sum);
+        
+        System.out.println("Printing numbers using stream");
+        numbers.stream().forEach(number -> System.out.println(number));
+
+        // Using reduce to calculate the sum
+        int totalSum = numbers.stream()
+            .reduce(0,(a,b)->a+b);
+        
+         int max = numbers.stream()
+            .reduce(Integer.MIN_VALUE,(a,b)->a>b? a:b);
+
+        System.out.println("Total sum using reduce: " + max);
+    }
+}
