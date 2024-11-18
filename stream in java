@@ -1,0 +1,20 @@
+import java.util.List;
+
+class Main {
+    public static void main(String[] args) {
+        List<String> fruits = List.of("apple", "banana", "mango", "sntra");
+        System.out.print(fruits.size());
+        System.out.println("\nPrinting fruits normally");
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        System.out.println("Printing fruits using stream");
+        fruits.stream().forEach(fruit -> System.out.println(fruit));
+
+        System.out.println("Printing fruits using filter");
+        fruits.stream()
+            .filter(fruit -> fruit.endsWith("a"))
+            .forEach(fruit -> System.out.println(fruit));
+    }
+}
